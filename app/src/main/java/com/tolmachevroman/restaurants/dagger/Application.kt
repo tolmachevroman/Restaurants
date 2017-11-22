@@ -2,6 +2,7 @@ package com.tolmachevroman.restaurants.dagger
 
 import android.app.Activity
 import android.app.Application
+import com.tolmachevroman.restaurants.BuildConfig
 import com.tolmachevroman.restaurants.dagger.components.DaggerAppComponent
 import com.tolmachevroman.restaurants.dagger.modules.AppModule
 import com.tolmachevroman.restaurants.dagger.modules.NetModule
@@ -24,7 +25,7 @@ class Application: Application(), HasActivityInjector {
          DaggerAppComponent
                  .builder()
                  .appModule(AppModule(this))
-                 .netModule(NetModule(""))
+                 .netModule(NetModule(BuildConfig.URL))
                  .build()
                  .inject(this)
 
