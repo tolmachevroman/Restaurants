@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "cuisine": -1,
+    "name": "Mi Cevichazo",
+    "lat": -33.431756,
+    "lng": -70.578719,
+    "price": 8900,
+    "image": "https://www.atrapalo.cl/common/photo/res/44559/106814/ticr_0_0.jpg",
+    "description": "Todo el sabor del Perú está presente en el restaurante Mi Cevichazo."
+  }
+]

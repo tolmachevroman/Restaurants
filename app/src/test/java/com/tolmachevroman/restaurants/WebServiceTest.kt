@@ -45,7 +45,7 @@ class WebServiceTest {
 
     @Test
     fun getRestaurantsTest() {
-        val content = this.javaClass.classLoader.getResource("get-restaurants.json").readText(Charset.forName("UTF-8"))
+        val content = this.javaClass.classLoader.getResource("get-restaurants-cases/valid.json").readText(Charset.forName("UTF-8"))
         mockWebServer.enqueue(MockResponse()
                 .setResponseCode(200)
                 .setBody(content))

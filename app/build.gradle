@@ -39,6 +39,7 @@ android {
         }
         androidTest {
             java.srcDirs += "$projectDir/$sharedTestDir"
+            resources.srcDirs += "src/test/resources"
         }
     }
 }
