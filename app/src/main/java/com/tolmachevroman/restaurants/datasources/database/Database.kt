@@ -1,4 +1,4 @@
-package com.tolmachevroman.restaurants.models
+package com.tolmachevroman.restaurants.datasources.database
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase

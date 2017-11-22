@@ -2,7 +2,7 @@ package com.tolmachevroman.restaurants.dagger.modules
 
 import android.app.Application
 import android.arch.persistence.room.Room
-import com.tolmachevroman.restaurants.models.Database
+import com.tolmachevroman.restaurants.datasources.database.Database
 import com.tolmachevroman.restaurants.models.restaurants.RestaurantsDao
 import dagger.Module
 import dagger.Provides
