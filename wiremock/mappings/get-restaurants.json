@@ -1,0 +1,166 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/restaurants",
+    "queryParameters" : {
+      "_limit" : {
+        "equalTo" : "15"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+        {
+          "id": 1,
+          "cuisine": 1,
+          "name": "Mi Cevichazo",
+          "lat": -33.431756,
+          "lng": -70.578719,
+          "price": 8900,
+          "image": "https://www.atrapalo.cl/common/photo/res/44559/106814/ticr_0_0.jpg",
+          "description": "Todo el sabor del Perú está presente en el restaurante Mi Cevichazo."
+        },
+        {
+          "id": 2,
+          "cuisine": 1,
+          "name": "Entre Piscos Gastronomia Peruana",
+          "lat": -33.439839,
+          "lng": -70.619334,
+          "price": 15000,
+          "image": "https://www.atrapalo.cl/common/photo/res/48346/129426/ticr_0_0.jpg",
+          "description": "Entre Piscos Gastronomía Peruana es un nuevo espacio gastronómico que ha abierto sus puertas en la ya famosa calle-gastronómica de Francisco Bilbao."
+        },
+        {
+          "id": 3,
+          "cuisine": 1,
+          "name": "Tu Cevichazo",
+          "lat": -33.438335,
+          "lng": -70.608295,
+          "price": 9900,
+          "image": "https://www.atrapalo.cl/common/photo/res/49350/152086/ticr_0_0.jpg",
+          "description": "Restaurante Tu Cevichazo, sigue la línea de calidad e inspiración en el emblemático plato que ha hecho mundialmente famosa a la gastronomía peruana: El ceviche."
+        },
+        {
+          "id": 4,
+          "cuisine": 1,
+          "name": "Perú Gustoso",
+          "lat": -33.422465,
+          "lng": -70.613470,
+          "price": 9950,
+          "image": "https://www.atrapalo.cl/common/photo/res/12545/94449/ticr_0_0.jpg",
+          "description": "Acogedor sitio que te espera con excelente comida peruana y una buena atención, combinación perfecta para hacer de tu comida un momento especial."
+        },
+        {
+          "id": 5,
+          "cuisine": 1,
+          "name": "Comoenlima",
+          "lat": -33.454693,
+          "lng": -70.593171,
+          "price": 22000,
+          "image": "https://www.atrapalo.cl/common/photo/res/46793/158496/ticr_0_0.jpg",
+          "description": "Dos empresarios gastronómicos con más de veinte años de experiencia en el rubro de la comida peruana en Santiago, Edilberto Pérez y Ángel Santisteban, se han unido para crear una oferta gastronómica peruana de solvente calidad gourmet en la comuna de Ñuñoa."
+        },
+        {
+          "id": 6,
+          "cuisine": 2,
+          "name": "Eccolo Qua",
+          "lat": -33.441242,
+          "lng": -70.627530,
+          "price": 16000,
+          "image": "https://www.atrapalo.cl/common/photo/res/41538/87025/ticr_0_0.jpg",
+          "description": "El Eccolo Qua es una auténtica trattoria italiana que se destaca por sus apetecibles pastas con una larga tradición y un sabor de ensueño."
+        },
+        {
+          "id": 7,
+          "cuisine": 2,
+          "name": "Il Siciliano",
+          "lat": -33.446933,
+          "lng": -70.662598,
+          "price": 17000,
+          "image": "https://www.atrapalo.cl/common/photo/res/8051/99450/ticr_0_0.jpg",
+          "description": "Un lugar que hace un homenaje a las trattorías de los años 30, lleno de tesoros clásicos y con recetas tan deliciosas que te harán pensar que estás en la mismísima Italia."
+        },
+        {
+          "id": 8,
+          "cuisine": 2,
+          "name": "Da Cesare & Paolo",
+          "lat": -33.454345,
+          "lng": -70.579468,
+          "price": 15000,
+          "image": "https://www.atrapalo.cl/common/photo/res/37358/85677/ticr_0_0.jpg",
+          "description": "Prueba la exquisita y variada cocina italiana de Da Cesare & Paolo; con increíbles pizzas a la piedra, pastas de elaboración propia, cervezas artesanales y deliciosos postres italianos tradicionales."
+        },
+        {
+          "id": 9,
+          "cuisine": 2,
+          "name": "Domani Pizzería Bar",
+          "lat": -33.431105,
+          "lng": -70.618430,
+          "price": 11000,
+          "image": "https://www.atrapalo.cl/common/photo/res/38033/142002/ticr_0_0.jpg",
+          "description": "Con una atractiva propuesta, Domani invita a disfrutar de los mejores sabores de la cocina italiana junto a una grata compañía."
+        },
+        {
+          "id": 10,
+          "cuisine": 2,
+          "name": "Amicci",
+          "lat": -33.408642,
+          "lng": -70.550129,
+          "price": 20000,
+          "image": "https://www.atrapalo.cl/common/photo/res/43091/98916/ticr_0_0.jpg",
+          "description": "Amicci es un Ristorante Italiano definido en lo novedoso y lo moderno, ubicado en uno de los mejores sectores de Las Condes."
+        },
+        {
+          "id": 11,
+          "cuisine": 3,
+          "name": "La Casa Vieja",
+          "lat": -33.384855,
+          "lng": -70.553858,
+          "price": 16000,
+          "image": "https://www.atrapalo.cl/common/photo/res/13030/100448/ticr_0_0.jpg",
+          "description": "Exquisita cocina chilena, en un lugar ideal para ir en familia, donde podrás encontrar preparaciones nacionales para todos los gustos."
+        },
+        {
+          "id": 12,
+          "cuisine": 3,
+          "name": "Mesón Nerudiano",
+          "lat": -33.430148,
+          "lng": -70.636700,
+          "price": 17000,
+          "image": "https://www.atrapalo.cl/common/photo/res/9702/127938/ticr_0_0.jpg",
+          "description": "Ven a un lugar lleno de poesía, donde su ambiente como su carta están inspirados en la obra de Pablo Neruda... un sitio ideal para que disfrutes del arte y la buena gastronomía."
+        },
+        {
+          "id": 13,
+          "cuisine": 3,
+          "name": "Viva la Vida",
+          "lat": -33.432433,
+          "lng": -70.634893,
+          "price": 13000,
+          "image": "https://www.atrapalo.cl/common/photo/res/30268/107119/ticr_0_0.jpg",
+          "description": "Un lugar lleno de estilo que ofrece comida saludable y un ambiente donde pasar un gran momento degustando la mejor comida."
+        },
+        {
+          "id": 14,
+          "cuisine": 3,
+          "name": "La Chimenea",
+          "lat": -33.442760,
+          "lng": -70.656672,
+          "price": 12000,
+          "image": "https://www.atrapalo.cl/common/photo/res/12617/140058/ticr_0_0.jpg",
+          "description": "En La Chimenea cada momento es único. Su ambiente envuelve a cada comensal, haciendo que su visita sea recordada por siempre."
+        },
+        {
+          "id": 15,
+          "cuisine": 3,
+          "name": "Ana María",
+          "lat": -33.453633,
+          "lng": -70.664909,
+          "price": 21000,
+          "image": "https://www.atrapalo.cl/common/photo/res/8131/98922/ticr_0_0.jpg",
+          "description": "Auténticas especialidades de carne y pescado en un sitio con un ambiente selecto."
+        }
+      ]
+  }
+}
