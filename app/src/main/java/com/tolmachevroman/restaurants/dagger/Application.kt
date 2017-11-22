@@ -2,6 +2,8 @@ package com.tolmachevroman.restaurants.dagger
 
 import android.app.Activity
 import android.app.Application
+import com.tolmachevroman.restaurants.dagger.components.DaggerAppComponent
+import com.tolmachevroman.restaurants.dagger.modules.AppModule
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -17,6 +19,12 @@ class Application: Application(), HasActivityInjector {
 
      override fun onCreate() {
         super.onCreate()
+
+         DaggerAppComponent
+                 .builder()
+                 .appModule(AppModule(this))
+                 .build()
+                 .inject(this)
 
     }
 
