@@ -43,6 +43,12 @@ buildscript {
     ext.okio_version = '1.13.0'
     ext.gson_version = '2.8.0'
     ext.moshi_version = '2.1.0'
+
+    ext.junit_version = '4.12'
+    ext.core_testing_version = '1.0.0'
+    ext.mockito_version = '2.11.0'
+    ext.runner_version = '1.0.1'
+    ext.espresso_core_version = '3.0.1'
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -75,7 +81,14 @@ dependencies {
     implementation "com.google.code.gson:gson:$gson_version"
     implementation "com.squareup.retrofit2:converter-moshi:$moshi_version"
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //tests
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "android.arch.core:core-testing:$core_testing_version"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
+
+    androidTestImplementation "android.arch.core:core-testing:$core_testing_version"
+    androidTestImplementation "org.mockito:mockito-android:$mockito_version"
+    androidTestImplementation "com.android.support.test:runner:$runner_version"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_core_version"
 }
