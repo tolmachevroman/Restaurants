@@ -12,6 +12,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -27,6 +33,7 @@ buildscript {
     ext.support_version = '26.1.0'
     ext.play_services_version = '11.6.0'
     ext.dagger_version = '2.13'
+    ext.arch_version = '1.0.0'
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -42,6 +49,14 @@ dependencies {
     implementation "com.google.dagger:dagger-android:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    //Lifecycle
+    implementation "android.arch.lifecycle:extensions:$arch_version"
+    kapt "android.arch.lifecycle:compiler:$arch_version"
+
+    //Room
+    implementation "android.arch.persistence.room:runtime:$arch_version"
+    kapt "android.arch.persistence.room:compiler:$arch_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
