@@ -11,7 +11,7 @@ import javax.inject.Singleton
  * Created by romantolmachev on 22/11/2017.
  */
 @Singleton
-class AppExecutors(private val mDiskIO: Executor, private val mNetworkIO: Executor, private val mMainThread: Executor) {
+open class AppExecutors(private val mDiskIO: Executor, private val mNetworkIO: Executor, private val mMainThread: Executor) {
 
     @Inject constructor() : this(Executors.newSingleThreadExecutor(), Executors.newFixedThreadPool(3),
             MainThreadExecutor())

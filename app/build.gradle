@@ -32,6 +32,15 @@ android {
     kapt {
         generateStubs = true
     }
+    sourceSets {
+        String sharedTestDir = 'src/sharedTest/java'
+        test {
+            java.srcDir sharedTestDir
+        }
+        androidTest {
+            java.srcDir sharedTestDir
+        }
+    }
 }
 buildscript {
     ext.support_version = '26.1.0'
@@ -52,7 +61,7 @@ buildscript {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
     //Support
     implementation "com.android.support:appcompat-v7:$support_version"
