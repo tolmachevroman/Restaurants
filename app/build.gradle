@@ -20,7 +20,11 @@ android {
         }
     }
     buildTypes {
+        debug {
+            buildConfigField 'String', 'URL', '"http://192.168.1.195:8080/"'
+        }
         release {
+            buildConfigField 'String', 'URL', '"https://my-json-server.typicode.com/tolmachevroman/demo/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -34,6 +38,17 @@ buildscript {
     ext.play_services_version = '11.6.0'
     ext.dagger_version = '2.13'
     ext.arch_version = '1.0.0'
+    ext.retrofit_version = '2.3.0'
+    ext.okhttp_version = '3.9.0'
+    ext.okio_version = '1.13.0'
+    ext.gson_version = '2.8.0'
+    ext.moshi_version = '2.1.0'
+
+    ext.junit_version = '4.12'
+    ext.core_testing_version = '1.0.0'
+    ext.mockito_version = '2.11.0'
+    ext.runner_version = '1.0.1'
+    ext.espresso_core_version = '3.0.1'
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -58,7 +73,22 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:$arch_version"
     kapt "android.arch.persistence.room:compiler:$arch_version"
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.squareup.okio:okio:$okio_version"
+    implementation "com.google.code.gson:gson:$gson_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$moshi_version"
+
+    //tests
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "android.arch.core:core-testing:$core_testing_version"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
+
+    androidTestImplementation "android.arch.core:core-testing:$core_testing_version"
+    androidTestImplementation "org.mockito:mockito-android:$mockito_version"
+    androidTestImplementation "com.android.support.test:runner:$runner_version"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_core_version"
 }
