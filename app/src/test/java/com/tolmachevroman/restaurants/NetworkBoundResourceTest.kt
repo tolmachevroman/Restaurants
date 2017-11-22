@@ -68,22 +68,22 @@ class NetworkBoundResourceTest {
         dbData = MutableLiveData()
         networkBoundResource = object : NetworkBoundResource<Foo>(appExecutors) {
             override fun saveNetworkCallResult(data: Foo?) {
-                println("saveNetworkCallResult")
+//                println("saveNetworkCallResult")
                 saveNetworkCallResult.apply(data)
             }
 
             override fun shouldLoadFromNetwork(data: Foo?): Boolean {
-                println("shouldLoadFromNetwork")
+//                println("shouldLoadFromNetwork")
                 return shouldLoadFromNetwork.apply(data)
             }
 
             override fun loadFromDatabase(): LiveData<Foo> {
-                println("loadFromDatabase")
+//                println("loadFromDatabase")
                 return dbData
             }
 
             override fun createNetworkCall(): Call<Foo> {
-                println("createNetworkCall")
+//                println("createNetworkCall")
                 return createNetworkCall.apply(Unit)
             }
         }
