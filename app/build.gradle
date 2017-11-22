@@ -33,12 +33,12 @@ android {
         generateStubs = true
     }
     sourceSets {
-        String sharedTestDir = 'src/sharedTest/java'
+        String sharedTestDir = 'src/sharedTest/utils'
         test {
-            java.srcDir sharedTestDir
+            java.srcDirs += "$projectDir/$sharedTestDir"
         }
         androidTest {
-            java.srcDir sharedTestDir
+            java.srcDirs += "$projectDir/$sharedTestDir"
         }
     }
 }

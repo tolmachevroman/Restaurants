@@ -23,6 +23,7 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import utils.Error404NotFoundMatcher
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.function.Function
 
@@ -47,15 +48,15 @@ class NetworkBoundResourceTest {
     }
 
     @Mock
-    lateinit var observer: Observer<Resource<Foo>>
+    private lateinit var observer: Observer<Resource<Foo>>
 
-    lateinit var appExecutors: AppExecutors
-    lateinit var networkBoundResource: NetworkBoundResource<Foo>
-    lateinit var dbData: MutableLiveData<Foo>
+    private lateinit var appExecutors: AppExecutors
+    private lateinit var networkBoundResource: NetworkBoundResource<Foo>
+    private lateinit var dbData: MutableLiveData<Foo>
 
-    lateinit var saveNetworkCallResult: Function<Foo?, Unit>
-    lateinit var shouldLoadFromNetwork: Function<Foo?, Boolean>
-    lateinit var createNetworkCall: Function<Unit, Call<Foo>>
+    private lateinit var saveNetworkCallResult: Function<Foo?, Unit>
+    private lateinit var shouldLoadFromNetwork: Function<Foo?, Boolean>
+    private lateinit var createNetworkCall: Function<Unit, Call<Foo>>
 
     private lateinit var fooWebService: FooWebService
     private lateinit var mockWebServer: MockWebServer
@@ -171,7 +172,7 @@ class NetworkBoundResourceTest {
 
         dbData.value = null
         Assert.assertFalse(saved.get())
-        verify(observer).onChanged(ArgumentMatchers.argThat { it!!.error!!.code == 404 })
+        verify(observer).onChanged(ArgumentMatchers.argThat(Error404NotFoundMatcher()))
     }
 
 }
