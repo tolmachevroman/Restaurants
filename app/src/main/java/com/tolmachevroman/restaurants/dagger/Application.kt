@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import com.tolmachevroman.restaurants.dagger.components.DaggerAppComponent
 import com.tolmachevroman.restaurants.dagger.modules.AppModule
+import com.tolmachevroman.restaurants.dagger.modules.NetModule
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -23,6 +24,7 @@ class Application: Application(), HasActivityInjector {
          DaggerAppComponent
                  .builder()
                  .appModule(AppModule(this))
+                 .netModule(NetModule(""))
                  .build()
                  .inject(this)
 
