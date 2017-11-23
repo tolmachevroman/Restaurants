@@ -1,6 +1,5 @@
 package com.tolmachevroman.restaurants
 
-import android.app.Application
 import android.content.Context
 import android.content.pm.PackageManager
 import android.net.ConnectivityManager
@@ -22,14 +21,14 @@ class UtilsTest {
 
     @Test
     fun hasConnectionTest() {
-        val application = Mockito.mock<Application>(Application::class.java)
+        val context = Mockito.mock<Context>(Context::class.java)
         val connManager = Mockito.mock(ConnectivityManager::class.java)
         val networkInfo = Mockito.mock(NetworkInfo::class.java)
         val packageManager = Mockito.mock(PackageManager::class.java)
-        val utils = Utils(application)
+        val utils = Utils(context)
 
-        Mockito.`when`(application.packageManager).thenReturn(packageManager)
-        Mockito.`when`(application.getSystemService(Context.CONNECTIVITY_SERVICE)).thenReturn(connManager)
+        Mockito.`when`(context.packageManager).thenReturn(packageManager)
+        Mockito.`when`(context.getSystemService(Context.CONNECTIVITY_SERVICE)).thenReturn(connManager)
         Mockito.`when`(connManager.activeNetworkInfo).thenReturn(networkInfo)
         Mockito.`when`(networkInfo.isAvailable).thenReturn(true)
         Mockito.`when`(networkInfo.isConnected).thenReturn(true)

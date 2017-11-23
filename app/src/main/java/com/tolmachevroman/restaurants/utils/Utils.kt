@@ -1,7 +1,6 @@
 package com.tolmachevroman.restaurants.utils
 
 import android.annotation.TargetApi
-import android.app.Application
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -18,18 +17,18 @@ import javax.inject.Singleton
  * Created by romantolmachev on 22/11/2017.
  */
 @Singleton
-class Utils @Inject constructor(private val app: Application) {
+class Utils @Inject constructor(private val context: Context) {
 
     fun hasConnection(): Boolean {
-        val cm = app.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork = cm.activeNetworkInfo
         return activeNetwork != null && activeNetwork.isAvailable && activeNetwork.isConnected
     }
 
     fun getBitmap(drawableId: Int): Bitmap {
-        val drawable = ContextCompat.getDrawable(app, drawableId)
+        val drawable = ContextCompat.getDrawable(context, drawableId)
         return when (drawable) {
-            is BitmapDrawable -> BitmapFactory.decodeResource(app.resources, drawableId)
+            is BitmapDrawable -> BitmapFactory.decodeResource(context.resources, drawableId)
             is VectorDrawable -> getBitmap(drawable)
             else -> throw IllegalArgumentException("unsupported drawable type")
         }
