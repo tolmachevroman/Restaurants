@@ -7,6 +7,8 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".dagger.Application"
@@ -29,8 +31,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".RestaurantsMapActivity"
-            android:label="@string/title_activity_restaurants_map">
+            android:name=".views.RestaurantsMapActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

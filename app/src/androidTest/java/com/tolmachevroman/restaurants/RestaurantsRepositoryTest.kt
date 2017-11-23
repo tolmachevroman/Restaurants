@@ -65,7 +65,7 @@ class RestaurantsRepositoryTest {
         val context = InstrumentationRegistry.getTargetContext()
         database = Room.inMemoryDatabaseBuilder(context, Database::class.java).allowMainThreadQueries().build()
         restaurantsDao = database.restaurantsDao()
-        utils = Utils()
+        utils = Utils(context)
         appExecutors = AppExecutors()
 
         mockWebServer = MockWebServer()
@@ -77,7 +77,7 @@ class RestaurantsRepositoryTest {
                 .client(OkHttpClient())
                 .build()
         webService = retrofit.create<WebService>(WebService::class.java)
-        repository = RestaurantsRepository(context, webService, restaurantsDao, utils, appExecutors)
+        repository = RestaurantsRepository(webService, restaurantsDao, utils, appExecutors)
     }
 
     @After

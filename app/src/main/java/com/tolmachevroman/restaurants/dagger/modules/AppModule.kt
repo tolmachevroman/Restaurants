@@ -2,8 +2,10 @@ package com.tolmachevroman.restaurants.dagger.modules
 
 import android.app.Application
 import android.arch.persistence.room.Room
+import android.content.Context
 import com.tolmachevroman.restaurants.datasources.database.Database
 import com.tolmachevroman.restaurants.models.restaurants.RestaurantsDao
+import com.tolmachevroman.restaurants.utils.Utils
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -17,6 +19,14 @@ class AppModule(private val app: Application) {
     @Provides
     @Singleton
     fun provideApplication(): Application = app
+
+    @Provides
+    @Singleton
+    fun provideContext(): Context = app.applicationContext
+
+    @Provides
+    @Singleton
+    fun providesUtils(): Utils = Utils(app)
 
     @Provides
     @Singleton

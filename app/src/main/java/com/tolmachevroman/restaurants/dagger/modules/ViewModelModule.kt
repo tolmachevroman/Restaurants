@@ -18,7 +18,7 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(RestaurantsViewModel::class)
-    internal abstract fun bindRepoViewModel(restaurantsViewModel: RestaurantsViewModel): ViewModel
+    internal abstract fun bindRestaurantsViewModel(restaurantsViewModel: RestaurantsViewModel): ViewModel
 
     @Binds
     internal abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

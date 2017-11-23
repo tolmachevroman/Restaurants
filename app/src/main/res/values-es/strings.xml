@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Restaurantes</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string-array name="cuisines">
+        <item>Todas las cocinas</item>
+        <item>Peruana</item>
+        <item>Italiana</item>
+        <item>Chilena</item>
+    </string-array>
+
+    <string name="restaurant">Restaurante</string>
+    <string name="prices_from">Precios desde</string>
+    <string name="price">$%1$d</string>
+</resources>

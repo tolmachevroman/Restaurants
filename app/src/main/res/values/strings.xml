@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Restaurants</string>
-    <string name="title_activity_restaurants_map">Map</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string-array name="cuisines">
+        <item>All cuisines</item>
+        <item>Peruvian</item>
+        <item>Italian</item>
+        <item>Chilean</item>
+    </string-array>
+
+    <string name="restaurant">Restaurant</string>
+    <string name="prices_from">Prices from</string>
+    <string name="price">$%1$d</string>
 </resources>

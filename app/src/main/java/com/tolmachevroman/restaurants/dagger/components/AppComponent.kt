@@ -1,6 +1,6 @@
 package com.tolmachevroman.restaurants.dagger.components
 
-import android.app.Application
+import com.tolmachevroman.restaurants.dagger.Application
 import com.tolmachevroman.restaurants.dagger.modules.AppModule
 import com.tolmachevroman.restaurants.dagger.modules.BuildersModule
 import com.tolmachevroman.restaurants.dagger.modules.NetModule
