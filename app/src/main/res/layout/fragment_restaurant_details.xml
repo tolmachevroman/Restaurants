@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:id="@+id/restaurant_content">
+
+        <!-- Restaurant's image -->
+        <RelativeLayout
+            android:id="@+id/image_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_height"
+            android:layout_alignParentTop="true"
+            android:paddingTop="2dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+
+        <!-- Restaurant's name -->
+        <TextView
+            android:id="@+id/restaurant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/image_layout"
+            android:padding="8dp"
+            android:text="@string/restaurant"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_layout"
+            android:layout_toEndOf="@+id/restaurant"
+            android:layout_toRightOf="@+id/restaurant"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:textSize="18sp" />
+
+        <!-- Prices from -->
+        <TextView
+            android:id="@+id/prices_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/restaurant"
+            android:padding="8dp"
+            android:text="@string/prices_from"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/restaurant"
+            android:layout_toEndOf="@id/prices_from"
+            android:layout_toRightOf="@+id/prices_from"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:textSize="18sp" />
+
+        <!-- Restaurant's description -->
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/prices_from"
+            android:padding="8dp"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</ScrollView>

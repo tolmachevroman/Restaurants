@@ -112,6 +112,19 @@ class RestaurantsMapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMa
     }
 
     override fun onMarkerClick(marker: Marker): Boolean {
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.position, 13.0f), object : GoogleMap.CancelableCallback {
+            override fun onFinish() {
+                val restaurantDetailsFragment = RestaurantDetailsFragment()
+                val args = Bundle()
+                val restaurant = marker.tag as Restaurant
+                args.putSerializable(RestaurantDetailsFragment.RESTAURANT, restaurant)
+                restaurantDetailsFragment.arguments = args
+                restaurantDetailsFragment.show(supportFragmentManager, "RESTAURANT_DETAILS")
+            }
+
+            override fun onCancel() {
+            }
+        })
         return true
     }
 
