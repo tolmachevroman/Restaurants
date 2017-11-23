@@ -104,5 +104,6 @@ dependencies {
     androidTestImplementation "android.arch.core:core-testing:$core_testing_version"
     androidTestImplementation "org.mockito:mockito-android:$mockito_version"
     androidTestImplementation "com.android.support.test:runner:$runner_version"
+    androidTestImplementation 'com.android.support.test:rules:1.0.1'
     androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
 }

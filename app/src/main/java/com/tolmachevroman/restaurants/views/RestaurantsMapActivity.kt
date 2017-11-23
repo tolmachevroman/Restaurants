@@ -123,7 +123,8 @@ class RestaurantsMapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMa
             3 -> BitmapDescriptorFactory.fromBitmap(utils.getBitmap(R.drawable.ic_chile))
             else -> null
         }
-        return MarkerOptions().position(point).title(restaurant.name).icon(icon)
+        //snippet to distinguish markers within UiAutomator
+        return MarkerOptions().snippet("cuisine:${restaurant.cuisine}").position(point).title(restaurant.name).icon(icon)
     }
 
     private fun showMarkers(restaurants: List<Restaurant>) {
