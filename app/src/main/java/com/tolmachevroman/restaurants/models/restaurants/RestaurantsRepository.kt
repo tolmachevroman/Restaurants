@@ -16,12 +16,12 @@ import javax.inject.Singleton
  * Created by romantolmachev on 22/11/2017.
  */
 @Singleton
-class RestaurantsRepository @Inject constructor(val context: Context, val webService: WebService, val restaurantsDao: RestaurantsDao,
+open class RestaurantsRepository @Inject constructor(val context: Context, val webService: WebService, val restaurantsDao: RestaurantsDao,
                                                 val utils: Utils, val appExecutors: AppExecutors) {
 
     val TAG = "RestaurantRepository"
 
-    fun getRestaurants(cuisine: Int = 0): LiveData<Resource<List<Restaurant>>> {
+    open fun getRestaurants(cuisine: Int = 0): LiveData<Resource<List<Restaurant>>> {
         return object : NetworkBoundResource<List<Restaurant>>(appExecutors) {
 
             override fun saveNetworkCallResult(data: List<Restaurant>?) {
