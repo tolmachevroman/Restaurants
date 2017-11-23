@@ -1,7 +1,6 @@
 package com.tolmachevroman.restaurants.models.restaurants
 
 import android.arch.lifecycle.LiveData
-import android.content.Context
 import android.util.Log
 import com.tolmachevroman.restaurants.datasources.database.NetworkBoundResource
 import com.tolmachevroman.restaurants.datasources.webservice.Resource
@@ -16,7 +15,7 @@ import javax.inject.Singleton
  * Created by romantolmachev on 22/11/2017.
  */
 @Singleton
-open class RestaurantsRepository @Inject constructor(val context: Context, val webService: WebService, val restaurantsDao: RestaurantsDao,
+open class RestaurantsRepository @Inject constructor(val webService: WebService, val restaurantsDao: RestaurantsDao,
                                                 val utils: Utils, val appExecutors: AppExecutors) {
 
     val TAG = "RestaurantRepository"
@@ -35,7 +34,7 @@ open class RestaurantsRepository @Inject constructor(val context: Context, val w
             }
 
             override fun shouldLoadFromNetwork(data: List<Restaurant>?): Boolean {
-                val shouldLoadFromNetwork = utils.hasConnection(context) && (data == null || data.isEmpty())
+                val shouldLoadFromNetwork = utils.hasConnection() && (data == null || data.isEmpty())
                 Log.d(TAG, "shouldLoadFromNetwork: $shouldLoadFromNetwork")
                 return shouldLoadFromNetwork
             }
