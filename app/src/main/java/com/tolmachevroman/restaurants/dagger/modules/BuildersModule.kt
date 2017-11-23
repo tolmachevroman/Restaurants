@@ -1,6 +1,6 @@
 package com.tolmachevroman.restaurants.dagger.modules
 
-import com.tolmachevroman.restaurants.RestaurantsMapActivity
+import com.tolmachevroman.restaurants.views.RestaurantsMapActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
