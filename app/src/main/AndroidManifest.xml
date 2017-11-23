@@ -29,8 +29,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".views.RestaurantsMapActivity"
-            android:label="@string/title_activity_restaurants_map">
+            android:name=".views.RestaurantsMapActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
