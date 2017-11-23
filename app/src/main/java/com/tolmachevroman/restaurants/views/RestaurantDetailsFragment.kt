@@ -43,7 +43,7 @@ class RestaurantDetailsFragment : BottomSheetDialogFragment() {
         if (arguments != null && arguments.containsKey(RESTAURANT)) {
             val restaurant = arguments.getSerializable(RESTAURANT) as Restaurant
 
-            val name = contentView.findViewById<TextView>(R.id.restaurant_name)
+            val name = contentView.findViewById<TextView>(R.id.name)
             name.text = restaurant.name
 
             val price = contentView.findViewById<TextView>(R.id.price)

@@ -3,11 +3,9 @@ package com.tolmachevroman.restaurants
 import android.support.test.InstrumentationRegistry
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
-import android.support.test.uiautomator.By
-import android.support.test.uiautomator.UiDevice
-import android.support.test.uiautomator.UiObject
-import android.support.test.uiautomator.UiSelector
+import android.support.test.uiautomator.*
 import com.tolmachevroman.restaurants.views.RestaurantsMapActivity
+import org.hamcrest.CoreMatchers
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
@@ -74,9 +72,32 @@ class RestaurantsMapActivityTest {
 
         Thread.sleep(1000)
 
-        val markers = device.findObjects(By.descContains("marker").pkg(packageName))
+        val markers = device.findObjects(By.descContains("cuisine").pkg(packageName))
+        Assert.assertNotNull(markers)
+
         for(marker in markers) {
-            Assert.assertEquals(marker.contentDescription, "cuisine:1")
+            Assert.assertThat(marker.contentDescription, CoreMatchers.containsString("cuisine:1"))
         }
+    }
+
+    /**
+     * Wait till map and markers get loaded; click on a marker; check that RestaurantDetail fragment
+     * is open
+     */
+    @Test
+    fun opensRestaurantDetailFragmentOnMarkerClick() {
+        Thread.sleep(2000)
+
+        val markers = device.findObjects(By.descContains("cuisine").pkg(packageName))
+        markers[0].click()
+        device.wait(Until.hasObject(By.res("$packageName:id/restaurant_content").pkg(packageName)), 2000)
+
+        val image = device.findObject(UiSelector().resourceId("$packageName:id/image"))
+        val name = device.findObject(UiSelector().resourceId("$packageName:id/name"))
+        val description = device.findObject(UiSelector().resourceId("$packageName:id/description"))
+
+        Assert.assertTrue(image.exists())
+        Assert.assertTrue(name.exists())
+        Assert.assertTrue(description.exists())
     }
 }

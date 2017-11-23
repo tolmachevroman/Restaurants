@@ -6,7 +6,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white">
+        android:background="@android:color/white"
+        android:id="@+id/restaurant_content">
 
         <!-- Restaurant's image -->
         <RelativeLayout
@@ -47,7 +48,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/restaurant_name"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/image_layout"
