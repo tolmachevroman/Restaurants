@@ -8,12 +8,12 @@ import android.support.design.widget.CoordinatorLayout
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import com.tolmachevroman.restaurants.R
 import com.tolmachevroman.restaurants.models.restaurants.Restaurant
-import kotlinx.android.synthetic.main.fragment_restaurant_details.*
 
 /**
  * Created by romantolmachev on 23/11/2017.
@@ -53,6 +53,7 @@ class RestaurantDetailsFragment : BottomSheetDialogFragment() {
             description.text = restaurant.description
 
             val image = contentView.findViewById<ImageView>(R.id.image)
+            val progressbar = contentView.findViewById<ProgressBar>(R.id.progressbar)
 
             val viewTreeObserver = contentView.viewTreeObserver
             viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
@@ -70,7 +71,8 @@ class RestaurantDetailsFragment : BottomSheetDialogFragment() {
                     }
 
                     //load image asynchronously
-                    if (restaurant.image.isNotBlank())
+                    if (restaurant.image.isNotBlank()) {
+                        progressbar.visibility = View.VISIBLE
                         image.postDelayed({
                             Picasso.with(context).load(restaurant.image).resize(width,
                                     resources.getDimensionPixelSize(R.dimen.image_height)).centerCrop().into(image, object : Callback {
@@ -82,6 +84,7 @@ class RestaurantDetailsFragment : BottomSheetDialogFragment() {
                                 }
                             })
                         }, 500)
+                    }
                 }
             })
         }
