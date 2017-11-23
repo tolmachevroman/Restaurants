@@ -1,4 +1,4 @@
-package viewmodels
+package com.tolmachevroman.restaurants.viewmodels
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider

@@ -1,4 +1,4 @@
-package viewmodels
+package com.tolmachevroman.restaurants.viewmodels
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData

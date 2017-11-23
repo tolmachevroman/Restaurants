@@ -17,7 +17,7 @@ import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
-import viewmodels.RestaurantsViewModel
+import com.tolmachevroman.restaurants.viewmodels.RestaurantsViewModel
 
 /**
  * Created by romantolmachev on 23/11/2017.
