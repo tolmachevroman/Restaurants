@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Restaurants</string>
     <string name="title_activity_restaurants_map">Map</string>
+
+    <string-array name="cuisines">
+        <item>All cuisines</item>
+        <item>Peruvian</item>
+        <item>Italian</item>
+        <item>Chilean</item>
+    </string-array>
+
 </resources>
