@@ -2,6 +2,15 @@ language: android
 sudo: required
 jdk: oraclejdk8
 
+ before_cache:
+  -rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  -rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+ cache:
+  directories:
+  - $HOME/.gradle/caches/
+  - $HOME/.gradle/wrapper/
+
 env:
  global:
  - ANDROID_API=26
@@ -16,6 +25,7 @@ android:
  - build-tools-$ANDROID_BUILD_TOOLS
  - android-$ANDROID_API
  - android-$EMULATOR_API_LEVEL
+ - extra-google-m2repository
  - extra-android-m2repository # for design library
  - addon-google_apis-google-19 # google play services
  - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API_LEVEL
@@ -36,12 +46,3 @@ before_script:
 
 script:
  - "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace"
-
- before_cache:
-  -rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
-  -rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-
- cache:
-  directories:
-  -$HOME/.gradle/caches/
-  -$HOME/.gradle/wrapper/
