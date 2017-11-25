@@ -43,6 +43,9 @@ android {
             resources.srcDirs += "src/test/resources"
         }
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 buildscript {
     ext.support_version = '26.1.0'
