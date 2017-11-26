@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/tolmachevroman/Restaurants.svg?branch=master)](https://travis-ci.org/tolmachevroman/Restaurants)
 
-# Restaurants
 ## New Android architecture components in action: creating a restaurants map application with Room, ViewModel, LiveData and Dagger 2
 
 Original posts:
@@ -11,3 +10,4 @@ Original posts:
 
 [Part 3: Tests.](https://medium.com/@romantolmachev/new-android-architecture-components-in-action-creating-a-restaurants-map-application-with-room-6d95aa9dbf06)
 
+![image](https://user-images.githubusercontent.com/560815/33237128-4ced54a8-d249-11e7-8501-ac6937171415.gif)
