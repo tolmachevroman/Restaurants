@@ -1,4 +1,8 @@
 language: android
+
+jdk:
+  - oraclejdk8
+
 android:
   components:
     - tools # to get the new `repository-11.xml`
@@ -7,5 +11,12 @@ android:
     - build-tools-26.0.2
     - android-26
     - sys-img-armeabi-v7a-android-25
+
+before_install:
+  - mkdir "$ANDROID_HOME/licenses" || true
+
 script:
-  - ./gradlew test
+  - ./gradlew clean build
+
+notifications:
+  email: false
