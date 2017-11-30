@@ -55,6 +55,7 @@ buildscript {
     ext.gson_version = '2.8.0'
     ext.moshi_version = '2.1.0'
     ext.picasso_version = '2.5.2'
+    ext.leakcanary_version = '1.5.4'
 
     ext.junit_version = '4.12'
     ext.core_testing_version = '1.0.0'
@@ -98,6 +99,10 @@ dependencies {
 
     //Picasso
     implementation "com.squareup.picasso:picasso:$picasso_version"
+
+    //Leak Canary
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary_version"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary_version"
 
     //tests
     testImplementation "junit:junit:$junit_version"

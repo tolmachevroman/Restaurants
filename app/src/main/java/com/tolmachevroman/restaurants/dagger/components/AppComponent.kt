@@ -1,6 +1,6 @@
 package com.tolmachevroman.restaurants.dagger.components
 
-import com.tolmachevroman.restaurants.dagger.Application
+import com.tolmachevroman.restaurants.dagger.RestaurantsApplication
 import com.tolmachevroman.restaurants.dagger.modules.AppModule
 import com.tolmachevroman.restaurants.dagger.modules.BuildersModule
 import com.tolmachevroman.restaurants.dagger.modules.NetModule
@@ -15,5 +15,5 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = arrayOf(AndroidInjectionModule::class, BuildersModule::class, ViewModelModule::class, AppModule::class, NetModule::class))
 interface AppComponent {
-    fun inject(app: Application)
+    fun inject(app: RestaurantsApplication)
 }
