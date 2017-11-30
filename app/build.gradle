@@ -102,7 +102,7 @@ dependencies {
 
     //Leak Canary
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary_version"
-    debugImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary_version"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary_version"
 
     //tests
     testImplementation "junit:junit:$junit_version"
