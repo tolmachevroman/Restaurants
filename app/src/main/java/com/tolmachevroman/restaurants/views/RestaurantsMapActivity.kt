@@ -4,7 +4,6 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.view.View.GONE
@@ -26,7 +25,7 @@ import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_restaurants_map.*
 import javax.inject.Inject
 
-class RestaurantsMapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLoadedCallback,
+class RestaurantsMapActivity : AbstractActivity(), OnMapReadyCallback, GoogleMap.OnMapLoadedCallback,
         GoogleMap.OnMarkerClickListener, AdapterView.OnItemSelectedListener {
 
     val TAG = "MapsActivity"
