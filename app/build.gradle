@@ -47,9 +47,10 @@ android {
 }
 buildscript {
     ext.support_version = '26.1.0'
-    ext.play_services_version = '11.6.0'
+    ext.play_services_version = '15.0.0'
     ext.dagger_version = '2.13'
     ext.arch_version = '1.0.0'
+    ext.constraint_version = '1.1.0'
     ext.retrofit_version = '2.3.0'
     ext.okhttp_version = '3.9.0'
     ext.okio_version = '1.13.0'
@@ -72,7 +73,7 @@ dependencies {
     implementation "com.android.support:support-v4:$support_version"
     implementation "com.android.support:appcompat-v7:$support_version"
     implementation "com.android.support:design:$support_version"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation "com.android.support.constraint:constraint-layout:$constraint_version"
 
     //Google Maps
     implementation "com.google.android.gms:play-services-maps:$play_services_version"
