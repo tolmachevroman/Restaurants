@@ -22,7 +22,8 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField 'String', 'URL', '"http://192.168.1.195:8080/"'
+//            buildConfigField 'String', 'URL', '"http://192.168.1.195:8080/"'
+            buildConfigField 'String', 'URL', '"https://my-json-server.typicode.com/tolmachevroman/demo/"'
         }
         release {
             buildConfigField 'String', 'URL', '"https://my-json-server.typicode.com/tolmachevroman/demo/"'

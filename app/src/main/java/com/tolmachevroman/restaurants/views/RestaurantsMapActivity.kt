@@ -1,6 +1,5 @@
 package com.tolmachevroman.restaurants.views
 
-import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -16,9 +15,8 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.tolmachevroman.restaurants.R
-import com.tolmachevroman.restaurants.datasources.webservice.Error
-import com.tolmachevroman.restaurants.datasources.webservice.Resource
 import com.tolmachevroman.restaurants.models.restaurants.Restaurant
+import com.tolmachevroman.restaurants.utils.ResourceObserver
 import com.tolmachevroman.restaurants.utils.Utils
 import com.tolmachevroman.restaurants.viewmodels.RestaurantsViewModel
 import dagger.android.AndroidInjection
@@ -32,8 +30,10 @@ class RestaurantsMapActivity : AbstractActivity(), OnMapReadyCallback, GoogleMap
 
     private lateinit var googleMap: GoogleMap
     private lateinit var restaurantsViewModel: RestaurantsViewModel
-    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
-    @Inject lateinit var utils: Utils
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    @Inject
+    lateinit var utils: Utils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "onCreate")
@@ -77,30 +77,11 @@ class RestaurantsMapActivity : AbstractActivity(), OnMapReadyCallback, GoogleMap
     override fun onMapLoaded() {
         Log.d(TAG, "onMapLoadedCallback")
 
-        restaurantsViewModel.restaurants
-                .observe(this, Observer<Resource<List<Restaurant>>> { resource ->
-                    when (resource?.status) {
-                        Resource.Status.SUCCESS -> {
-                            hideLoading()
-                            if (resource.data != null && resource.data.isNotEmpty()) {
-                                Log.d(TAG, "observer -> SUCCESS, ${resource.data.size} items")
-                                showMarkers(resource.data)
-                            }
-                        }
-                        Resource.Status.ERROR -> {
-                            hideLoading()
-                            if (resource.error != null) {
-                                Log.d(TAG, "observer -> ERROR, ${resource.error}")
-                                showErrorMessage(resource.error)
-                            }
-                        }
-                        Resource.Status.LOADING -> {
-                            showLoading()
-                            Log.d(TAG, "observer -> LOADING")
-                        }
-                    }
-                })
-
+        restaurantsViewModel.restaurants.observe(this, ResourceObserver("RestaurantsMapActivity",
+                hideLoading = { hideLoading() },
+                showLoading = { showLoading() },
+                onSuccess = { data -> showMarkers(data) },
+                onError = { message -> showErrorMessage(message) }))
 
         spinner.onItemSelectedListener = this
         spinner.isEnabled = true
@@ -153,7 +134,7 @@ class RestaurantsMapActivity : AbstractActivity(), OnMapReadyCallback, GoogleMap
         googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 40))
     }
 
-    private fun showErrorMessage(error: Error) {
+    private fun showErrorMessage(error: String) {
         Toast.makeText(this, "Error: $error", Toast.LENGTH_LONG).show()
     }
 
