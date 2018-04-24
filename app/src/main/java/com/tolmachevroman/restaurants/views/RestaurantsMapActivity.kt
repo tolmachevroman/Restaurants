@@ -78,10 +78,10 @@ class RestaurantsMapActivity : AbstractActivity(), OnMapReadyCallback, GoogleMap
         Log.d(TAG, "onMapLoadedCallback")
 
         restaurantsViewModel.restaurants.observe(this, ResourceObserver("RestaurantsMapActivity",
-                hideLoading = { hideLoading() },
-                showLoading = { showLoading() },
-                onSuccess = { data -> showMarkers(data) },
-                onError = { message -> showErrorMessage(message) }))
+                hideLoading = ::hideLoading,
+                showLoading = ::showLoading,
+                onSuccess = ::showMarkers,
+                onError = ::showErrorMessage))
 
         spinner.onItemSelectedListener = this
         spinner.isEnabled = true
