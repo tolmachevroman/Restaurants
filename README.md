@@ -10,4 +10,6 @@ Original posts:
 
 [Part 3: Tests.](https://medium.com/@romantolmachev/new-android-architecture-components-in-action-creating-a-restaurants-map-application-with-room-6d95aa9dbf06)
 
+[Addendum: ResourceObserver](https://medium.com/@romantolmachev/abstracting-resource-observing-using-lambda-magic-b76b64490766)
+
 ![image](https://user-images.githubusercontent.com/560815/33237128-4ced54a8-d249-11e7-8501-ac6937171415.gif)
