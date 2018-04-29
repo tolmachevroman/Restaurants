@@ -40,8 +40,8 @@ class RestaurantDetailsFragment : BottomSheetDialogFragment() {
         val contentView = View.inflate(context, R.layout.fragment_restaurant_details, null)
         dialog.setContentView(contentView)
 
-        if (arguments != null && arguments.containsKey(RESTAURANT)) {
-            val restaurant = arguments.getSerializable(RESTAURANT) as Restaurant
+        arguments?.let {
+            val restaurant = it.getSerializable(RESTAURANT) as Restaurant
 
             val name = contentView.findViewById<TextView>(R.id.name)
             name.text = restaurant.name
@@ -88,6 +88,5 @@ class RestaurantDetailsFragment : BottomSheetDialogFragment() {
                 }
             })
         }
-
     }
 }
